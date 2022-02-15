@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import store from "./store/store";
-
+import configureStore from "./store/store";
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -10,9 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
     <div>
       <h1>Todos App</h1>
     </div>,
+    
     root
-  );
-});
+    );
+    const store = configureStore();
+    window.store = store;
+  });
 
 
-export default Todo;
+// export default Todo;
