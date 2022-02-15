@@ -65,14 +65,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _actions_todo_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/todo_actions */ "./frontend/actions/todo_actions.js");
 
+var initialState = {
+  1: {
+    id: 1,
+    title: "wash car",
+    body: "with soap",
+    done: false
+  },
+  2: {
+    id: 2,
+    title: "wash dog",
+    body: "with shampoo",
+    done: true
+  }
+};
 
 var todosReducer = function todosReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
   var nextState = Object.assign({}, state);
 
   switch (action.type) {
+    case _actions_todo_actions__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_TODOS:
+      nextState[action] = action.todos;
+      return nextState;
+
     default:
       return nextState;
   }
@@ -30755,6 +30773,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
+/* harmony import */ var _actions_todo_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./actions/todo_actions */ "./frontend/actions/todo_actions.js");
+
 
 
 
@@ -30763,6 +30783,7 @@ document.addEventListener("DOMContentLoaded", function () {
   react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Todos App")), root);
   var store = (0,_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])();
   window.store = store;
+  window.receiveTodos = _actions_todo_actions__WEBPACK_IMPORTED_MODULE_3__.receiveTodos;
 }); // export default Todo;
 })();
 
