@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const store = configureStore();
     window.store = store;
     window.receiveTodos = receiveTodos;
+    window.receiveTodo = receiveTodo;
   });
 
 

@@ -91,6 +91,10 @@ var todosReducer = function todosReducer() {
       nextState[action] = action.todos;
       return nextState;
 
+    case _actions_todo_actions__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_TODO:
+      nextState[action.todo.id] = action.todo;
+      return nextState;
+
     default:
       return nextState;
   }
@@ -30784,6 +30788,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var store = (0,_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])();
   window.store = store;
   window.receiveTodos = _actions_todo_actions__WEBPACK_IMPORTED_MODULE_3__.receiveTodos;
+  window.receiveTodo = _actions_todo_actions__WEBPACK_IMPORTED_MODULE_3__.receiveTodo;
 }); // export default Todo;
 })();
 
