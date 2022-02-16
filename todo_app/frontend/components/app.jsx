@@ -1,6 +1,4 @@
 import React from 'react';
-import { allTodos } from '../reducers/selectors';
-import TodoList from './todos/todo_list';
 import TodoListContainer from './todos/todo_list_container'
 
 const App = () => {

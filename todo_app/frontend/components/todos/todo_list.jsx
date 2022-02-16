@@ -1,12 +1,25 @@
 import React from "react";
+import { todoListItem } from "./todo_list_item";
+import TodoForm from "./todo_form";
 
 class TodoList extends React.Component{
-    // constructor(props){
-    //     super(props);
-    //     this.state = {}
-    // }
+    constructor(props){
+        super(props);
+    }
+
+    
+
     render(){
-        return (<h3>Todo List goes here!</h3>)
+        return (
+            <div>
+                <ul>
+                    {this.props.todos.map(todo => {
+                        return (todoListItem(todo))
+                    })}
+                </ul>
+                <TodoForm receiveTodo={this.props.receiveTodo} />
+            </div>
+        )
     }
 }
 
