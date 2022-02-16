@@ -17,5 +17,3 @@ document.addEventListener("DOMContentLoaded", () => {
   window.allTodos = allTodos;
   });
 
-
-// export default Todo;
