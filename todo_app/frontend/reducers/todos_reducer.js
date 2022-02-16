@@ -22,6 +22,9 @@ const todosReducer = (state = initialState, action) => {
         case RECEIVE_TODOS:
             nextState[action] = action.todos;
             return nextState;
+        case RECEIVE_TODO:
+            nextState[action.todo.id] = action.todo;
+            return nextState;
         default:
             return nextState;
     }

@@ -144,6 +144,10 @@ var todosReducer = function todosReducer() {
       nextState[action] = action.todos;
       return nextState;
 
+    case _actions_todo_actions__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_TODO:
+      nextState[action.todo.id] = action.todo;
+      return nextState;
+
     default:
       return nextState;
   }
