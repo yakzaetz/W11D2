@@ -24,4 +24,9 @@ ActiveRecord::Schema.define(version: 2022_02_17_185147) do
     t.index ["title"], name: "index_todos_on_title"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "email", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
 end
